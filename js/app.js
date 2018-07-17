@@ -3,7 +3,8 @@
  */
 const deck = document.querySelector('.deck');
  
-//when the game starts have everything at 0 or turned over
+let toggledCards = []; // add the card to a list of open cards
+
 
 
 /*
@@ -30,18 +31,26 @@ function shuffle(array) {
 //event listener for when card is clicked
 deck.addEventListener('click', function (event) {
     const click = event.target;
-if (click.classList.contains('card')){
+if (click.classList.contains('card') && toggledCards.length < 2){
     //getting cards to flip over
-    click.classList.toggle('open');
-    click.classList.toggle('show');
-  
+    toggleCard(click);
+  addToggleCard(click);
+  if (toggledCards.length === 2) {
+      console.log ('2 cards!');
+  }
 }
-
 });
 
-// get cards to flip over
+// get cards to flip over storing in a function
+ function toggleCard (click) {
+     click.classList.toggle('open');
+     click.classList.toggle('show');
+ }
 
-
+ function addToggleCard(click) {
+     toggledCards.push(click);
+     console.log(toggledCards);
+ }
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
