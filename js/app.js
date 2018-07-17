@@ -1,11 +1,11 @@
 /*
  * Create a list that holds all of your cards
  */
-const deck = document.querySelector('.deck');
+
  
-let toggledCards = []; // add the card to a list of open cards
 
-
+const deck = document.querySelector('.deck');
+let toggledCards = [];
 
 /*
  * Display the cards on the page
@@ -15,6 +15,8 @@ let toggledCards = []; // add the card to a list of open cards
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+
+
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -28,30 +30,31 @@ function shuffle(array) {
 
     return array;
 }
-//event listener for when card is clicked
-deck.addEventListener('click', function (event) {
-    const click = event.target;
-if (click.classList.contains('card') && toggledCards.length < 2){
-    //getting cards to flip over
-    toggleCard(click);
-  addToggleCard(click);
-  if (toggledCards.length === 2) {
-      console.log ('2 cards!');
-  }
-}
-});
+
 
 // get cards to flip over storing in a function
- function toggleCard (click) {
-     click.classList.toggle('open');
-     click.classList.toggle('show');
- }
+function toggleCard (clickTarget) {
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
+}
 
- function addToggleCard(click) {
-     toggledCards.push(click);
-     console.log(toggledCards);
- }
-/*
+
+
+//event listener for when card is clicked
+deck.addEventListener('click', event => {
+    const clickTarget = event.target;
+    if (clickTarget.classList.contains('card')){
+        toggleCard(clickTarget);
+    console.log('cards clicked!');
+    }
+});
+
+
+
+
+
+
+     /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
