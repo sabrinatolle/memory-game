@@ -2,6 +2,18 @@
  * Create a list that holds all of your cards
  */
 const deck = document.querySelector('.deck');
+ 
+//when the game starts have everything at 0 or turned over
+
+let open = [];
+let matched = 0;
+let moves = 0;
+let stars = 3;
+let time = {
+    seconds: 0,
+    minutes: 0,
+
+};
 
 /*
  * Display the cards on the page
@@ -24,14 +36,15 @@ function shuffle(array) {
 
     return array;
 }
-
+//event listener for when card is clicked
 deck.addEventListener('click', function (event) {
     const click = event.target;
 if (click.classList.contains('card')){
-    console.log('Im a card');
+   console.log('im a card');
 }
 
 });
+
 
 
 
