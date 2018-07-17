@@ -32,25 +32,33 @@ function shuffle(array) {
 }
 
 
-// get cards to flip over storing in a function
-function toggleCard (clickTarget) {
-    clickTarget.classList.toggle('open');
-    clickTarget.classList.toggle('show');
-}
+
 
 
 
 //event listener for when card is clicked
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
-    if (clickTarget.classList.contains('card')){
+    if (clickTarget.classList.contains('card') &&
+        toggledCards.length < 2) {
         toggleCard(clickTarget);
-    console.log('cards clicked!');
+        addToggleCard(clickTarget);
+    if (toggledCards.length === 2){
+    console.log(' 2 cards clicked!');
     }
+  }
 });
 
+// get cards to flip over storing in a function
+function toggleCard (clickTarget) {
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
+}
 
-
+function addToggleCard(clickTarget) {
+    toggledCards.push(clickTarget);
+    console.log(toggledCards);
+}
 
 
 
