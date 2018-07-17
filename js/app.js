@@ -5,15 +5,6 @@ const deck = document.querySelector('.deck');
  
 //when the game starts have everything at 0 or turned over
 
-let open = [];
-let matched = 0;
-let moves = 0;
-let stars = 3;
-let time = {
-    seconds: 0,
-    minutes: 0,
-
-};
 
 /*
  * Display the cards on the page
@@ -40,12 +31,15 @@ function shuffle(array) {
 deck.addEventListener('click', function (event) {
     const click = event.target;
 if (click.classList.contains('card')){
-   console.log('im a card');
+    //getting cards to flip over
+    click.classList.toggle('open');
+    click.classList.toggle('show');
+  
 }
 
 });
 
-
+// get cards to flip over
 
 
 /*
