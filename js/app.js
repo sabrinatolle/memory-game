@@ -23,6 +23,10 @@ let toggledCards = [];
 
 let moves = 0;
 
+let clockOff = true;
+
+let time = 0;
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -55,7 +59,11 @@ function shuffle(array) {
 //event listener for when card is clicked
 deck.addEventListener('click', event => {
     const clickTarget = event.target;
-    if (isClickValid(clickTarget)) {
+    if (isClickValid(clickTarget)) { 
+        if (clockOff) {
+            startClock();
+            clockOff = false;
+        }
         toggleCard(clickTarget);
         addToggleCard(clickTarget);
     if (toggledCards.length === 2){
@@ -137,6 +145,16 @@ function hideStar() {
 }
 hideStar();
 hideStar();
+
+// starting clock
+function startClock() {
+    time = 0;
+    let clockId = setTimeOut(() => {
+        time++;
+        console.log('1 second has passed');
+    }, 1000);
+}
+startClock();
      /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
