@@ -21,6 +21,8 @@ shuffleDeck();
 
 let toggledCards = [];
 
+let moves = 0;
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -58,6 +60,7 @@ deck.addEventListener('click', event => {
         addToggleCard(clickTarget);
     if (toggledCards.length === 2){
         checkForMatch(clickTarget);
+        addMove();
     console.log(' 2 cards clicked!');
     }
   }
@@ -106,7 +109,11 @@ function isClickValid(clickTarget)
     
 }
 
-
+function addMove() {
+    moves++;
+    const movesText = document.querySelector('.moves');
+    movesText.innerHTML = moves;
+}
  
      /*
  * set up the event listener for a card. If a card is clicked:
