@@ -61,6 +61,7 @@ deck.addEventListener('click', event => {
     if (toggledCards.length === 2){
         checkForMatch(clickTarget);
         addMove();
+        checkScore();
     console.log(' 2 cards clicked!');
     }
   }
@@ -108,13 +109,34 @@ function isClickValid(clickTarget)
     );
     
 }
-
+// counting moves 
 function addMove() {
     moves++;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
 }
+
+// giving star rating
+
+function checkScore() {
+    if (moves === 16 || moves === 24
+    ){
+        removeStar();
+    }
+}
  
+// hiding stars
+function hideStar() {
+    const starList = document.querySelectorAll('.stars li');
+    for (star of starList) {
+        if (star.style.display !== 'none') {
+            star.style.display = 'none';
+            break;
+      }
+   }
+}
+hideStar();
+hideStar();
      /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
