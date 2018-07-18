@@ -5,6 +5,20 @@
  
 
 const deck = document.querySelector('.deck');
+
+//getting cards to shuffle
+
+function shuffleDeck() {
+    const cardsToShuffle = Array.from(document.querySelectorAll('.deck li'));
+    console.log('cards shuffle' , cardsToShuffle);
+    const shuffledCards = shuffle(cardsToShuffle);
+    for (card of shuffledCards) {
+        deck.appendChild(card);
+        }
+}
+shuffleDeck();
+
+
 let toggledCards = [];
 
 /*
@@ -91,7 +105,9 @@ function isClickValid(clickTarget)
     );
     
 }
- // i see you hi yes
+
+
+ 
      /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
