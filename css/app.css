@@ -108,9 +108,7 @@ h1 {
     cursor: pointer;
 }
 
-/* modal */
-
-.modal__background {
+.modal_background {
     position: absolute;
     top: 0;
     left: 0;
@@ -119,57 +117,50 @@ h1 {
     background: rgba(0, 0, 0, 0.438);
 }
 
-.modal__body {
+.modal_body {
     position: relative;
     width: 400px;
-    height: 400px;
+    
     top: 50%;
     left: 50%;
     background: #ffffff;
     transform: translate(-50%, -70%);
 }
 
-.modal__heading{
+.modal_heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
     border-bottom: 1px solid gray;
+    
 }
 
-.modal__close {
+.modal_close {
     font-weight: bold;
     font-size: 2rem;
 }
 
-.modal__stats {
-    display:flex;
+.modal_stats {
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid gray;
 }
 
-.modal__buttons {
+.modal_buttons {
     display: flex;
     justify-content: space-around;
     padding: 1rem;
 }
 
-.modal__button {
+.modal_button {
     width: 60px;
     height: 30px;
 }
 
-.modal__body {
-    position: relative;
-    width: 400px;
-    top:50%;
-    left: 50%;
-    background: #ffffff;
-    transform: translate(-50%, -70%);
-}
-
 .hide {
     display: none;
+
 }
