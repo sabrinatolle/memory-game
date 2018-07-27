@@ -190,8 +190,7 @@ function toggleModal() {
     modal.classList.toggle('hide');
 }
 
-toggleModal(); //on 
-//toggleModal(); //off
+
 
 function writeModalStats() {
     
@@ -233,6 +232,7 @@ function resetGame() {
     resetMoves();
     resetStars();
     shuffleDeck();
+    
     
 }
 
