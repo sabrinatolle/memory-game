@@ -107,6 +107,7 @@ function checkForMatch() {
            toggleModal();
            writeModalStats();
            gameOver();
+           
        }
     } else {
         
@@ -202,7 +203,7 @@ function writeModalStats() {
     const clockTime = document.querySelector('.clock').innerHTML;
     const movesStat = document.querySelector('.modal_moves');
     const starsStat = document.querySelector('modal_stars');
-    const stars = getStars();
+   //const stars = getStars();
 
     timeStat.innerHTML = clockTime;
     movesStat.innerHTML = moves;
@@ -214,9 +215,9 @@ function getStars() {
     const stars = document.querySelectorAll('.stars li');
 
   
-    const hiddenStars = stars.filter(star => star.style.display !== 'none');
+    //const hiddenStars = stars.filter(star => star.style.display !== 'none');
     
-    return hiddenStars.length;
+    //return hiddenStars.length;
     
     let starCount = 0;
     
