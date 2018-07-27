@@ -232,6 +232,7 @@ function resetGame() {
     resetMoves();
     resetStars();
     shuffleDeck();
+    resetCards();
     
     
 }
