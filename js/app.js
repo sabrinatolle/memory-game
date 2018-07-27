@@ -33,7 +33,7 @@ let clockOff = true;
 let time = 0;
 let clockId;
 let matched = 0;
-const TOTAL_PAIRS =8;
+const TOTAL_PAIRS = 8;
 
 /*
  * Display the cards on the page
@@ -188,6 +188,7 @@ function toggleModal() {
    
     const modal = document.querySelector('.modal_background');
     modal.classList.toggle('hide');
+   
 }
 
 
@@ -233,7 +234,7 @@ function resetGame() {
     resetStars();
     shuffleDeck();
     resetCards();
-    
+     
     
 }
 
@@ -267,6 +268,8 @@ function replayGame() {
     resetGame();
     toggleModal();
 }
+
+
 
 function resetCards() {
     const cards = document.querySelectorAll('.deck li');
