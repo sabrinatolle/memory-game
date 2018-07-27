@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/beach.jpg'); /* Background pattern from Pixabay */
     font-family: 'Coda', cursive;
 }
 
@@ -30,7 +30,8 @@ body {
 
 h1 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    color: white;
+    font-weight: 600;
 }
 
 /*
@@ -40,7 +41,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background-image: linear-gradient(to right top, #f6a817, #ff8d4d, #ff787f, #ff75af, #e980d7);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -54,7 +55,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49;
+    background: #563277;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -67,7 +68,7 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #30d14a;
     cursor: default;
 }
 
@@ -77,7 +78,7 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #ee3b9e;
     font-size: 33px;
 }
 
@@ -123,7 +124,7 @@ h1 {
     
     top: 50%;
     left: 50%;
-    background: #ffffff;
+    background: #4edbee;
     transform: translate(-50%, -70%);
 }
 

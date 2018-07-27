@@ -198,6 +198,7 @@ function toggleModal() {
 function writeModalStats() {
     
     const timeStat = document.querySelector('.modal_time');
+    
     const clockTime = document.querySelector('.clock').innerHTML;
     const movesStat = document.querySelector('.modal_moves');
     const starsStat = document.querySelector('modal_stars');
