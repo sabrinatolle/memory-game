@@ -104,6 +104,8 @@ function checkForMatch() {
        matched += 1;
 
        if (matched === TOTAL_PAIRS) {
+           toggleModal();
+           writeModalStats();
            gameOver();
        }
     } else {
