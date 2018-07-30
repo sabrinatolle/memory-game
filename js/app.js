@@ -35,6 +35,8 @@ let clockId;
 let matched = 0;
 const TOTAL_PAIRS = 8;
 
+
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -108,6 +110,8 @@ function checkForMatch() {
            writeModalStats();
            gameOver();
            
+           
+           
        }
     } else {
         
@@ -160,7 +164,7 @@ hideStar();
 
 function startClock() {
     
-    clockId = setInterval(() => {
+     clockId = setInterval(() => {
         time++;
         displayTime();
         
@@ -203,33 +207,24 @@ function writeModalStats() {
     const clockTime = document.querySelector('.clock').innerHTML;
     const movesStat = document.querySelector('.modal_moves');
     const starsStat = document.querySelector('modal_stars');
-   //const stars = getStars();
+    const stars = getStars();
 
-    timeStat.innerHTML = clockTime;
-    movesStat.innerHTML = moves;
-    starsStat.innerHTML = stars;
+    timeStat.innerHTML = `Time = ${clockTime}`;
+    movesStat.innerHTML = `Moves = ${moves}`;
+    starsStat.innerHTML = `Stars = ${stars}`;
 }
 
 function getStars() {
   
-    const stars = document.querySelectorAll('.stars li');
-
-  
-    //const hiddenStars = stars.filter(star => star.style.display !== 'none');
-    
-    //return hiddenStars.length;
-    
-    let starCount = 0;
-    
-    for (const star of stars) {
-        
-       
+     stars = document.querySelectorAll('.stars li');
+     starCount = 0;
+    for ( star of stars) {
         if (star.style.display !== 'none') {
             starCount += 1;
         }
     }
     
-    return starCount;
+  return starCount;
 }
 
 function resetGame() {
