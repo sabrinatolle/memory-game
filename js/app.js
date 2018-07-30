@@ -74,7 +74,7 @@ deck.addEventListener('click', event => {
        addToggleCard(clickTarget);
        
        if (toggledCards.length === 2) {
-           checkForMatch(clickTarget);
+         checkForMatch(clickTarget);
            addMove();
            checkScore();
        
@@ -94,7 +94,8 @@ function addToggleCard (clickTarget) {
     console.log(toggledCards);
 }
 
-function checkForMatch() {
+ function checkForMatch() {
+    
     
     if (
         toggledCards[0].firstElementChild.className ===
@@ -108,7 +109,7 @@ function checkForMatch() {
        if (matched === TOTAL_PAIRS) {
            toggleModal();
            writeModalStats();
-           gameOver();
+           //gameOver();
            
            
            
@@ -206,9 +207,10 @@ function writeModalStats() {
     
     const clockTime = document.querySelector('.clock').innerHTML;
     const movesStat = document.querySelector('.modal_moves');
-    const starsStat = document.querySelector('modal_stars');
+    const starsStat = document.querySelector('.modal_stars');
+   
     const stars = getStars();
-
+   
     timeStat.innerHTML = `Time = ${clockTime}`;
     movesStat.innerHTML = `Moves = ${moves}`;
     starsStat.innerHTML = `Stars = ${stars}`;
