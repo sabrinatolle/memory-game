@@ -265,9 +265,12 @@ function gameOver() {
     toggleModal();
 }
 
+
 function replayGame() {
     resetGame();
+    
     toggleModal();
+    
 }
 
 
